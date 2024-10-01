@@ -1,0 +1,329 @@
+/* استيراد الخط من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* خلفية سوداء بالكامل */
+    color: #ffffff; /* نص أبيض ليتباين مع الخلفية */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* لضمان امتداد الجسم لملء الشاشة */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a; /* لون الخلفية لشريط التنقل */
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f08a24; /* لون الشعار البرتقالي */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f08a24;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: #f08a24;
+    transform: translateY(-3px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 100px auto 40px auto; /* إضافة مساحة أعلى لتجنب تداخل شريط التنقل */
+    background-color: #1e1e1e; /* خلفية محتوى مظلمة */
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f08a24;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f08a24;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #011522;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+    /* يمكن إضافة تنسيقات إضافية للواجهة الأمامية */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card .title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #f08a24;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* المسافة بين البطاقات */
+    flex-wrap: wrap; /* للسماح بلف البطاقات في الشاشات الصغيرة */
+    margin-bottom: 40px;
+}
+
+.card {
+    width: 190px;
+    height: 254px;
+    background-color: #011522; /* خلفية البطاقة */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+.card__content {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card__content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.social {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social h2 {
+    color: #f08a24;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f08a24;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.social p {
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+
+.social a {
+    color: #f08a24;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #d97821;
+}
+
+button#toggleExperience {
+    display: block;
+    margin: 30px auto;
+    background-color: #f08a24;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button#toggleExperience:hover {
+    background-color: #d97821;
+    transform: scale(1.05);
+}
+
+/* استعلام وسائط لتحسين التوافق مع الشاشات الصغيرة */
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: 'Roboto', sans-serif; /* استخدام الخط الاحترافي */
+}
+  
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    color: #f08a24; /* اللون البرتقالي للعناوين */
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.5); /* زيادة الظل لإضفاء عمق */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* توسيط المحتوى */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: none; /* إزالة الحدود البرتقالية */
+    border-radius: 1rem;
+}
+  
+.flip-card-front {
+    background: #011522; /* خلفية داكنة متناسقة مع الموقع */
+    color: #f08a24; /* نص برتقالي */
+}
+  
+.flip-card-back {
+    background: #f08a24; /* خلفية برتقالية */
+    color: #000000; /* نص أسود ليكون واضحًا على الخلفية البرتقالية */
+    transform: rotateY(180deg);
+}
+
+/* إضافة بعض التحسينات للتفاعل */
+.flip-card-front p, .flip-card-back p {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.flip-card-front p.title, .flip-card-back p.title {
+    color: #f08a24; /* تأكيد لون العنوان البرتقالي */
+}
