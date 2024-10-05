@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title></title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="heading">عدد الزيارات لموقعك</h1>
+        <p id="visitCount">عدد الزيارات: <span id="count">0</span></p>
+    <!-- نموذج HTML -->
+    <form class="form" id="calorieForm" onsubmit="return false;">
+        <h1 id="heading">حاسبة السعرات الحرارية</h1> <!-- العنوان بتنسيق خاص -->
+        <div class="field">
+            <label>الجنس:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">ذكر</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">أنثى</label>
+        </div>
+        <div class="field">
+            <label>العمر:</label>
+            <input class="input-field" type="number" id="age" placeholder="أدخل عمرك">
+        </div>
+        <div class="field">
+            <label>الطول (سم):</label>
+            <input class="input-field" type="number" id="height" placeholder="أدخل طولك">
+        </div>
+        <div class="field">
+            <label>الوزن (كجم):</label>
+            <input class="input-field" type="number" id="weight" placeholder="أدخل وزنك">
+        </div>
+        <div class="field">
+            <label for="activity">اختر مستوى النشاط:</label>
+            <select id="activity" name="activity" class="input-field">
+                <option value="sedentary">قليل الحركة</option>
+                <option value="light">نشاط خفيف</option>
+                <option value="moderate">نشاط متوسط</option>
+                <option value="active">نشاط عالي</option>
+                <option value="very_active">نشاط عالي جدًا</option>
+            </select>
+        </div>
+        <div class="btn">
+            <button class="button1" type="button" onclick="calculateCalories()">حساب السعرات</button>
+        </div>
+        <p id="result"></p>
+    </form>
+
+    <!-- مكان لعرض النتيجة -->
+    <p id="result"></p>
+    <script src="scrip1.js">
+        
+    </script>
+</body>
+</html>
